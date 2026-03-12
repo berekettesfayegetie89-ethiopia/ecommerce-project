@@ -16,19 +16,29 @@ const userRoutes = require("./routes/user");
 
 app.use("/api/user", userRoutes);
 
+const productRoutes = require("./routes/product");
+app.use("/api/products", productRoutes);
+
+const cartRoutes = require("./routes/cart");
+
+app.use("/api/cart", cartRoutes);
+
+const orderRoutes = require("./routes/order");
+
+app.use("/api/orders", orderRoutes);
+
 // Test Route
 app.get("/", (req, res) => {
-    res.send("API is running...");
+  res.send("API is running...");
 });
 
-
-
 // Connect MongoDB
-mongoose.connect(process.env.MONGO_URI)
-.then(() => console.log("MongoDB Connected"))
-.catch((err) => console.log(err));
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.log(err));
 
 // Start Server
 app.listen(5000, () => {
-    console.log("Server running on port 5000");
+  console.log("Server running on port 5000");
 });
