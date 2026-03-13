@@ -1,6 +1,7 @@
 import React from "react";
 import Products from "./Products";
 import Orders from "./Orders";
+import AdminProducts from "./AdminProducts";
 
 const Dashboard = () => {
   const logout = () => {
@@ -21,6 +22,7 @@ const Dashboard = () => {
       <Products />
 
       <Orders />
+      <AdminProducts />
     </div>
   );
 };

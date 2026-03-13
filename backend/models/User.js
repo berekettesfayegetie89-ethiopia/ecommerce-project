@@ -15,6 +15,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true, // Must have password
   },
+  role: {
+  type: String,
+  default: "user"
+ }
 }, { timestamps: true }); // Automatically adds createdAt & updatedAt
 
 // Create model
